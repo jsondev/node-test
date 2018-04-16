@@ -9,7 +9,7 @@ it('should add two numbers', () => {
     // }
 });
 
-it('should square one number', ()=>{
+it('should square one number', () => {
     var res = utils.square(2);
     expect(res).toBe(4).toBeA('number');
     // if (res !== 4){
@@ -17,6 +17,14 @@ it('should square one number', ()=>{
     // }
 });
 
-it('should expect some values', ()=>{
+it('should expect some values', () => {
     expect(12).toNotBe(13);
+});
+
+// async test
+it('should async add two numbers', (done) => {
+    utils.asyncAdd(4, 3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
 });
